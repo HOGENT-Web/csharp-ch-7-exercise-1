@@ -1,4 +1,5 @@
-﻿using Domain.Products;
+using Domain.Common;
+using Domain.Products;
 using Shared.Products;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Services.Products
         private static readonly List<ProductDto.Detail> products = new();
         static ProductService()
         {
-            var fakeProducts = new ProductFaker().Generate(25).Select(x => new ProductDto.Detail
+            var fakeProducts = new ProductFaker().Generate(10).Select(x => new ProductDto.Detail
             {
                 Id = x.Id,
                 Name = x.Name,
