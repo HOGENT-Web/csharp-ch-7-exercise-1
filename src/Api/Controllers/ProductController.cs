@@ -33,5 +33,12 @@ namespace Api.Controllers
         {
             return productService.DeleteAsync(id);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<int>> CreateAsync(ProductDto.Create model)
+        {
+            var id  = await productService.CreateAsync(model);
+            return CreatedAtAction("GetDetail", id);
+        }
     }
 }
