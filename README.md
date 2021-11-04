@@ -139,7 +139,6 @@ Try running your API and using Swagger to make requests, try to create a new pro
 ### OrderItem
 - Product has to be filled-in
 - Quantity cannot be negative
-- Total is the price times the quantity
 - The price property is filled-in by the product price. When the product price is altered, the price or the OrderItem should not change.
 - OrderItems are equal when the product, quantity and price are the same.
 
@@ -150,10 +149,10 @@ Try running your API and using Swagger to make requests, try to create a new pro
 ---
 
 ### Product
-- Name cannot be null or whitespace (use the private setter)
-- Category cannot be null (use the private setter)
+- Name cannot be null or whitespace (use the private field)
+- Category cannot be null (use the private field)
 - Description can be anything your heart desires
-- Price cannot be null (use the private setter)
+- Price cannot be null (use the private field)
 - InStock has no real checks.
 - Product is an entity thus, should be equal when the Id's are the same.
 
@@ -164,11 +163,12 @@ Try running your API and using Swagger to make requests, try to create a new pro
 - Customer is an entity thus, should be equal when the Id's are the same.
 
 ### Category
-- Name cannot be null or whitespace (use the private setter)
+- Name cannot be null or whitespace (use the private field)
 - Category is an entity thus, should be equal when the Id's are the same.
 
 ### Order
 - OrderDate should be set to the current DateTime (use UTC)
+- ShippingAddress should not be null
 - Cart should not be null
 - Cart should contain more than 0 lines
 - There are no checks on the deliverydate nor giftwrapping
@@ -181,12 +181,12 @@ Try running your API and using Swagger to make requests, try to create a new pro
 
 ### Cart
 - Can be created without any specific properties
-- Total sums ip the item's totals.
+- Total sums up the item's totals.
 - AddItem should add an item to list of it's not in the list yet(check the product) else it should increase the quantity of the item. 
 RemoveLine, removes the line from the private collection.
 - Clear, removes all items from the Cart.
 
-### OrderLine
+### CartLine
 - Is immutable and requires an OrderItem
 - IncreaseQuantity adds the quantity
 
