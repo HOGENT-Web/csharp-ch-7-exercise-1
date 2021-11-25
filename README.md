@@ -51,7 +51,7 @@ In this exercise we are going to create a e-commerce website where customers can
 - In the `Services` Project:
     - Create a folder called `Products`
     - Add a reference to the `Shared` and the `Domain` project
-    - Implement a `ProductService` which implements `IProductService` and make it return fake data, using Bogus, the Fakers you created for the unittests (mapped to DTO's) or sinmply fake data (for now). In a later chapter we'll use Entity Framework to fetch and mutate data in a Database. 
+    - Implement a `ProductService` which implements `IProductService` and make it return fake data, using Bogus, the Fakers you created for the unittests (mapped to DTO's) or simply fake data (for now). In a later chapter we'll use Entity Framework to fetch and mutate data in a Database. 
         - Use a static constructor to generate a static private list of `ProductDto.Detail`
         - GetIndex returns a list of 10 items
         - GetDetail returns 1 specific product based on the productId
